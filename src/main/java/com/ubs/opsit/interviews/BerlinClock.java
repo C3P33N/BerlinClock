@@ -23,7 +23,7 @@ public class BerlinClock implements TimeConverter {
     @Override
     public String convertTime(String aTime) {
         //First we need to check if given time was in correct format
-        Pattern timeFormat = Pattern.compile("\\d{2}:\\d{2}:\\d{2}");
+        Pattern timeFormat = Pattern.compile("([01]{1}[0-9]|2[0-4]):[0-5]\\d:[0-5]\\d");
         Matcher providedTime = timeFormat.matcher(aTime);
 
         if (!providedTime.matches()){

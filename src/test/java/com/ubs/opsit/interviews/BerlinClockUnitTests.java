@@ -49,6 +49,21 @@ public class BerlinClockUnitTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void test_25_60_61(){
+        clock.convertTime("25:60:61");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_29_05_00(){
+        clock.convertTime("29:05:00");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_99_99_99(){
+        clock.convertTime("99:99:99");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void test_wrong_input_string(){
         clock.convertTime("hh:mm:ss");
     }
